@@ -1,0 +1,2 @@
+This modular code targets the existing schema shown in the user's screenshots. It intentionally does not DROP or CREATE tables. Verify room_types has columns type_id, type_name, price_per_night.
+For editable per-room nightly pricing, run database/UPGRADE-ROOM-RATE.sql once. New rooms store their own rooms.room_rate; existing rooms are initialized from room_types.price_per_night. Billing and room inventory display the room-specific rate with a fallback to the type rate.
